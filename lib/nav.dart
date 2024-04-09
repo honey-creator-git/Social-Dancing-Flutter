@@ -61,12 +61,12 @@ class _NavState extends State<Nav> {
         elevation: 0.0,
         backgroundColor: Colors.white,
         title: Text(
-          'Nallagram',
+          'Rhythms',
           style: TextStyle(
             fontFamily: 'Metropolis',
-            color: Colors.black,
-            fontSize: 20.0,
-            fontWeight: FontWeight.w700,
+            color: Colors.pink,
+            fontSize: 25.0,
+            fontWeight: FontWeight.bold,
             letterSpacing: -1,
           ),
         ),
@@ -81,7 +81,11 @@ class _NavState extends State<Nav> {
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 gradient: LinearGradient(
-                  colors: [Colors.pink, Colors.redAccent, Colors.orange],
+                  colors: [
+                    Colors.pink, 
+                    Colors.redAccent, 
+                    Colors.orange
+                  ],
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                 ),

@@ -37,6 +37,13 @@
             {
               "client_id": "535866782706-qsrrplnqmmqdja36lrivs0dnuk5s6u3o.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "535866782706-i4uhfneusksnst2sscrme5555bsm54cj.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.cyblogerz.nallagram"
+              }
             }
           ]
         }
@@ -74,6 +81,13 @@
             {
               "client_id": "535866782706-qsrrplnqmmqdja36lrivs0dnuk5s6u3o.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "535866782706-i4uhfneusksnst2sscrme5555bsm54cj.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.cyblogerz.nallagram"
+              }
             }
           ]
         }
@@ -111,6 +125,13 @@
             {
               "client_id": "535866782706-qsrrplnqmmqdja36lrivs0dnuk5s6u3o.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "535866782706-i4uhfneusksnst2sscrme5555bsm54cj.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.cyblogerz.nallagram"
+              }
             }
           ]
         }

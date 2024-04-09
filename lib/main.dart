@@ -8,17 +8,26 @@ import 'package:provider/provider.dart';
 import 'screens/Authenticate/welcome_screen.dart';
 import 'screens/Authenticate/register_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'root.dart';
 import 'screens/Chat/chat_home.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-
-final _auth = FirebaseAuth.instance;
+import 'package:flutter/foundation.dart';
+import 'dart:io' show Platform;
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  if (kDebugMode) {
+    FirebaseFirestore.instance.settings = Settings(
+      host: '${Platform.isAndroid ? '10.0.2.2' : 'localhost'}:8080',
+      sslEnabled: false,
+      persistenceEnabled: false,
+    );
+  }
+  
   runApp(MyApp());
 }
 
@@ -59,7 +68,7 @@ class Authenticate extends StatelessWidget {
     final firebaseUser = context.watch<User>();
 
     if (firebaseUser != null) {
-      return Nav();
+      return Welcome();
     }
 
     return Welcome();

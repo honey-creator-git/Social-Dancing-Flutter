@@ -147,7 +147,7 @@ class PostStream extends StatelessWidget {
           postCards.add(postCard);
         }
         return ListView(
-          shrinkWrap: true,
+          shrinkWrap: false,
           physics: ClampingScrollPhysics(),
           children: postCards.reversed.toList(),
         );
