@@ -32,72 +32,93 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(children: [
-      Column(
-        children: <Widget>[
-          Container(
-            color: Colors.white,
-            child: Column(
-              children: <Widget>[
-                SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: <Widget>[
-                      spacing(),
-                      StoryWid(
-                          img: StoryViewData[0].img,
-                          name: StoryViewData[0].name),
-                      spacing(),
-                      StoryWid(
-                          img: StoryViewData[1].img,
-                          name: StoryViewData[1].name),
-                      spacing(),
-                      StoryWid(
-                          img: StoryViewData[2].img,
-                          name: StoryViewData[2].name),
-                      spacing(),
-                      StoryWid(
-                          img: StoryViewData[3].img,
-                          name: StoryViewData[3].name),
-                      spacing(),
-                      StoryWid(
-                          img: StoryViewData[4].img,
-                          name: StoryViewData[4].name),
-                      spacing(),
-                      StoryWid(
-                          img: StoryViewData[5].img,
-                          name: StoryViewData[5].name),
-                      spacing(),
-                      StoryWid(
-                          img: StoryViewData[6].img,
-                          name: StoryViewData[6].name),
-                      spacing(),
-                      StoryWid(
-                          img: StoryViewData[7].img,
-                          name: StoryViewData[7].name),
-                      spacing(),
-                      StoryWid(
-                          img: StoryViewData[8].img,
-                          name: StoryViewData[8].name),
-                      spacing(),
-                      StoryWid(
-                          img: StoryViewData[9].img,
-                          name: StoryViewData[9].name),
-                      spacing(),
-                    ],
-                  ),
+    return Container(
+      alignment: Alignment.center,
+      child: ListView(
+        children: [
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: <Widget>[
+                    spacing(),
+
+                    StoryWid(
+                      img: StoryViewData[0].img,
+                      name: StoryViewData[0].name,
+                    ),
+
+                    spacing(),
+
+                    StoryWid(
+                      img: StoryViewData[1].img,
+                      name: StoryViewData[1].name,
+                    ),
+
+                    spacing(),
+
+                    StoryWid(
+                      img: StoryViewData[2].img,
+                      name: StoryViewData[2].name,
+                    ),
+
+                    spacing(),
+
+                    StoryWid(
+                      img: StoryViewData[3].img,
+                      name: StoryViewData[3].name,
+                    ),
+
+                    spacing(),
+
+                    StoryWid(
+                      img: StoryViewData[4].img,
+                      name: StoryViewData[4].name,
+                    ),
+
+                    spacing(),
+
+                    StoryWid(
+                      img: StoryViewData[5].img,
+                      name: StoryViewData[5].name,
+                    ),
+
+                    spacing(),
+
+                    StoryWid(
+                      img: StoryViewData[6].img,
+                      name: StoryViewData[6].name,
+                    ),
+
+                    spacing(),
+
+                    StoryWid(
+                      img: StoryViewData[7].img,
+                      name: StoryViewData[7].name,
+                    ),
+
+                    spacing(),
+
+                    StoryWid(
+                      img: StoryViewData[8].img,
+                      name: StoryViewData[8].name,
+                    ),
+                  ],
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
           SizedBox(
             height: 5.0,
           ),
           PostStream(),
         ],
-      ),
-    ]);
+      )
+    );
   }
 }
 
@@ -147,10 +168,40 @@ class PostStream extends StatelessWidget {
           postCards.add(postCard);
         }
         return ListView(
-          shrinkWrap: false,
+          shrinkWrap: true,
           physics: ClampingScrollPhysics(),
           children: postCards.reversed.toList(),
         );
+        // return TextField(
+        //     textAlign: TextAlign.left,
+        //     keyboardType: TextInputType.emailAddress,
+        //     onChanged: (value) {
+        //       //Do something with the user input.
+        //       // email = value;
+        //     },
+        //     decoration: InputDecoration(
+        //       prefixIcon: Padding(
+        //         padding: EdgeInsets.fromLTRB(30.0, 20.0, 10.0, 20.0),
+        //         child: FaIcon(FontAwesomeIcons.envelope, color: Colors.black)
+        //       ),
+        //       hintText: 'Enter your email',
+        //       contentPadding:
+        //         EdgeInsets.fromLTRB(30.0, 20.0, 5.0, 20.0),
+        //       border: OutlineInputBorder(
+        //         borderRadius: BorderRadius.all(Radius.circular(32.0)),
+        //       ),
+        //       enabledBorder: OutlineInputBorder(
+        //         borderSide:
+        //             BorderSide(color: Colors.blueAccent, width: 1.0),
+        //         borderRadius: BorderRadius.all(Radius.circular(32.0)),
+        //       ),
+        //       focusedBorder: OutlineInputBorder(
+        //         borderSide:
+        //             BorderSide(color: Colors.blueAccent, width: 2.0),
+        //         borderRadius: BorderRadius.all(Radius.circular(32.0)),
+        //       ),
+        //     ),
+        //   );
       },
     );
   }

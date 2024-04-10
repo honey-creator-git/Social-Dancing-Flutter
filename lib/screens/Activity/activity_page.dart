@@ -6,10 +6,10 @@ import 'package:toast/toast.dart';
 class Activity extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    ListTile _followList(int num, String name, String place) {
+    ListTile _followList(String url, String name, String place) {
       return ListTile(
         leading: CircleAvatar(
-          backgroundImage: AssetImage('images/usr$num.jfif'),
+          backgroundImage: NetworkImage(url),
           radius: 28.0,
         ),
         title: Text(
@@ -166,25 +166,25 @@ class Activity extends StatelessWidget {
             ),
           ],
         ),
-        _followList(Random().nextInt(10) + 1, 'Harris', 'Enathu'),
-        _followList(Random().nextInt(10) + 1, 'Rahul', 'India'),
-        _followList(Random().nextInt(10) + 1, 'Mani', 'Los Angeles'),
-        _followList(Random().nextInt(10) + 1, 'Rajpal', 'Newzealand'),
-        _followList(Random().nextInt(10) + 1, 'Kim jung', 'Trivandrum'),
-        _followList(Random().nextInt(10) + 1, 'Gregory', 'Adoor'),
-        _followList(Random().nextInt(10) + 1, 'Rahul', 'New York'),
-        _followList(Random().nextInt(10) + 1, 'Devis', 'Kerala'),
-        _followList(Random().nextInt(10) + 1, 'Ram', 'Jammu'),
-        _followList(Random().nextInt(10) + 1, 'Edwin', 'India'),
-        _followList(Random().nextInt(10) + 1, 'Aswathy', 'Kovalam'),
-        _followList(Random().nextInt(10) + 1, 'Pranav', 'Thiruvalla'),
-        _followList(Random().nextInt(10) + 1, 'Aswin', 'Pala'),
-        _followList(Random().nextInt(10) + 1, 'Devu', 'Chenganoor'),
-        _followList(Random().nextInt(10) + 1, 'Prakash', 'MAnnady'),
-        _followList(Random().nextInt(10) + 1, 'Athul', 'Korea'),
-        _followList(Random().nextInt(10) + 1, 'Rajiv', 'Washington'),
-        _followList(Random().nextInt(10) + 1, 'Mohanlal', 'AbuDhabi'),
-        _followList(Random().nextInt(10) + 1, 'Sethupathi', 'Heaven'),
+        _followList("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSP26cjkW6LqNqSJmP1qq-nmy112EdssG6AC7fV8JYvCD-oTcsGY0gtBYgFhVbCs2T3nnA&usqp=CAU", 'Harris', 'Enathu'),
+        _followList("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4Lf7wdlXTOR9yqBpWtuo2pid1EilQ0bxnRTSBZvPPkhlDBGlBQee7QraOponv6JSgf4c&usqp=CAU", 'Rahul', 'India'),
+        _followList("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCwHF4W1YpjtRVl3u_2lRnzrbqPwYSltyRzkGthXRmgQ&s", 'Mani', 'Los Angeles'),
+        _followList("https://t4.ftcdn.net/jpg/03/83/25/83/360_F_383258331_D8imaEMl8Q3lf7EKU2Pi78Cn0R7KkW9o.jpg", 'Rajpal', 'Newzealand'),
+        _followList("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXUdZHEIh62u6gLJUM4dybb83j4DzSD4zcKKfvmQkttAKaRY8qJskarlA7SWzaEE78KSg&usqp=CAU", 'Kim jung', 'Trivandrum'),
+        _followList("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-ngJBzgC87qJ4Bfp7kqULVMRhsxsALwaqjdIOzkoBxgBiDv7-8KwiupW3-D1lAtbbrw8&usqp=CAU", 'Gregory', 'Adoor'),
+        _followList("https://thumbs.dreamstime.com/b/woman-laying-grass-5455137.jpg", 'Rahul', 'New York'),
+        _followList("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRM-s5JJFWxcD9623Xk8besdStfRp4YasZQy54dbeuyFEGGkTpTyIm1L_dyOxvxpuC03w&usqp=CAU", 'Devis', 'Kerala'),
+        _followList("https://www.perfocal.com/blog/content/images/2021/01/Perfocal_17-11-2019_TYWFAQ_100_standard-3.jpg", 'Ram', 'Jammu'),
+        _followList("https://blog.photofeeler.com/wp-content/uploads/2017/09/instagram-profile-picture-maker.jpg", 'Edwin', 'India'),
+        _followList("https://i.pinimg.com/736x/5d/e1/84/5de184caac6ed1ed08c1dcecabcd1fc8.jpg", 'Aswathy', 'Kovalam'),
+        _followList("https://i.pinimg.com/originals/63/f9/d5/63f9d5fd5f34c8544a31c22c3e909cec.jpg", 'Pranav', 'Thiruvalla'),
+        _followList("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_oCSpNyceseWF8FaomiEv5k6QEfZq1Ck0HAFzFqFer7dIDYnU2l1IbDFbM8WmQLiL8Z4&usqp=CAU", 'Aswin', 'Pala'),
+        // _followList("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSP26cjkW6LqNqSJmP1qq-nmy112EdssG6AC7fV8JYvCD-oTcsGY0gtBYgFhVbCs2T3nnA&usqp=CAU", 'Devu', 'Chenganoor'),
+        // _followList("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSP26cjkW6LqNqSJmP1qq-nmy112EdssG6AC7fV8JYvCD-oTcsGY0gtBYgFhVbCs2T3nnA&usqp=CAU", 'Prakash', 'MAnnady'),
+        // _followList("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSP26cjkW6LqNqSJmP1qq-nmy112EdssG6AC7fV8JYvCD-oTcsGY0gtBYgFhVbCs2T3nnA&usqp=CAU", 'Athul', 'Korea'),
+        // _followList("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSP26cjkW6LqNqSJmP1qq-nmy112EdssG6AC7fV8JYvCD-oTcsGY0gtBYgFhVbCs2T3nnA&usqp=CAU", 'Rajiv', 'Washington'),
+        // _followList("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSP26cjkW6LqNqSJmP1qq-nmy112EdssG6AC7fV8JYvCD-oTcsGY0gtBYgFhVbCs2T3nnA&usqp=CAU", 'Mohanlal', 'AbuDhabi'),
+        // _followList("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSP26cjkW6LqNqSJmP1qq-nmy112EdssG6AC7fV8JYvCD-oTcsGY0gtBYgFhVbCs2T3nnA&usqp=CAU", 'Sethupathi', 'Heaven'),
       ],
     );
   }

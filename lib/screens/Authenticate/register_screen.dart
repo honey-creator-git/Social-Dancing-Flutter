@@ -18,16 +18,31 @@ class _RegisterState extends State<Register> {
   final _auth = FirebaseAuth.instance;
   final _store = FirebaseFirestore.instance;
 
+  @override
+  void initState() {
+    super.initState();
+    _auth.useAuthEmulator('localhost', 9099);
+  }
+
   User user; //never gonna change  
   String email;
   String password;
   String name;
   List<String> profiles = [
-    'https://cdn.dribbble.com/users/86682/screenshots/10441196/penguin.png',
-    'https://cdn.dribbble.com/users/1162077/screenshots/7475318/media/8837a0ae1265548e27a2b2bb3ab1f366.png',
-    'https://cdn.dribbble.com/users/1162077/screenshots/7495197/media/92507bdcf4b5edfa12d5e9cc4f01b301.png',
-    'https://cdn.dribbble.com/users/1162077/screenshots/7542499/media/d6f3265e5017257e5900b762754f2655.png',
-    'https://cdn.dribbble.com/users/1162077/screenshots/5940704/media/6a37a16dc390eed6c93f6f5020af211a.png'
+    'https://t4.ftcdn.net/jpg/03/83/25/83/360_F_383258331_D8imaEMl8Q3lf7EKU2Pi78Cn0R7KkW9o.jpg',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXUdZHEIh62u6gLJUM4dybb83j4DzSD4zcKKfvmQkttAKaRY8qJskarlA7SWzaEE78KSg&usqp=CAU',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-ngJBzgC87qJ4Bfp7kqULVMRhsxsALwaqjdIOzkoBxgBiDv7-8KwiupW3-D1lAtbbrw8&usqp=CAU',
+    'https://thumbs.dreamstime.com/b/woman-laying-grass-5455137.jpg',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRM-s5JJFWxcD9623Xk8besdStfRp4YasZQy54dbeuyFEGGkTpTyIm1L_dyOxvxpuC03w&usqp=CAU',
+    'https://www.perfocal.com/blog/content/images/2021/01/Perfocal_17-11-2019_TYWFAQ_100_standard-3.jpg',
+    'https://blog.photofeeler.com/wp-content/uploads/2017/09/instagram-profile-picture-maker.jpg',
+    'https://i.pinimg.com/736x/5d/e1/84/5de184caac6ed1ed08c1dcecabcd1fc8.jpg',
+    'https://i.pinimg.com/originals/63/f9/d5/63f9d5fd5f34c8544a31c22c3e909cec.jpg',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_oCSpNyceseWF8FaomiEv5k6QEfZq1Ck0HAFzFqFer7dIDYnU2l1IbDFbM8WmQLiL8Z4&usqp=CAU',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSP26cjkW6LqNqSJmP1qq-nmy112EdssG6AC7fV8JYvCD-oTcsGY0gtBYgFhVbCs2T3nnA&usqp=CAU',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4Lf7wdlXTOR9yqBpWtuo2pid1EilQ0bxnRTSBZvPPkhlDBGlBQee7QraOponv6JSgf4c&usqp=CAU',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCwHF4W1YpjtRVl3u_2lRnzrbqPwYSltyRzkGthXRmgQ&s',
+
   ];
   String photoUrl(List<String> pfls) {
     return pfls.elementAt(Random().nextInt(pfls.length));
@@ -188,7 +203,7 @@ class _RegisterState extends State<Register> {
                       child: MaterialButton(
                         onPressed: () async {
                           setState(() {
-                            // showSpinner = true;
+                            showSpinner = true;
                           });
 
                           try {
@@ -202,7 +217,7 @@ class _RegisterState extends State<Register> {
                             await user.updatePhotoURL(pfp);
                             await _store
                               .collection('users')
-                              .doc("test")
+                              .doc(user.uid)
                               .set({
                                 'name': name,
                                 'profile': pfp,
@@ -215,41 +230,10 @@ class _RegisterState extends State<Register> {
                                 'following': 0,
                                 'posts': 0
                               });
-                            // print("New User!!!!");
-                            // print(newUser.toString());
-                            // User user = newUser.user;
-                            // user.updateDisplayName(name);
-                            // var pfp = photoUrl(profiles);
-                            // user.updatePhotoURL(pfp);
-                            // _store.collection('users').add({
-                            //   'name': name,
-                            //   'profile': pfp,
-                            //   'followerlist': [""],
-                            //   'followinglist': [""],
-                            //   'descr':
-                            //       'Tap edit profile to update profile photo and description',
-                            //   'followers': 0,
-                            //   'userid': user.uid,
-                            //   'following': 0,
-                            //   'posts': 0
-                            // });
-                            // _store.collection('users').doc(user.uid).set({
-                            //   'name': name,
-                            //   'profile': pfp,
-                            //   'followerlist': [""],
-                            //   'followinglist': [""],
-                            //   'descr':
-                            //       'Tap edit profile to update profile photo and description',
-                            //   'followers': 0,
-                            //   'userid': user.uid,
-                            //   'following': 0,
-                            //   'posts': 0
-                            // });
-
-                            // if (newUser != null) {
-                            //   showSpinner = false;
-                            //   Navigator.pushNamed(context, Nav.id);
-                            // }
+                            if (newUser != null) {
+                              showSpinner = false;
+                              Navigator.pushNamed(context, Nav.id);
+                            }
                           }
                           //Implement registration functionality.
                           //as it is returning a future we assign a final variable to it

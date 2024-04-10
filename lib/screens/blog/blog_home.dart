@@ -123,31 +123,31 @@ class BlogHome extends StatelessWidget {
                     Row(
                       children: <Widget>[
                         Expanded(
-                            child: tagBuild("Coding", Colors.pink, context)),
+                            child: tagBuild("Events", Colors.pink, context)),
                         Expanded(
-                            child: tagBuild("Travel", Colors.blue, context)),
+                            child: tagBuild("Classes", Colors.blue, context)),
                         Expanded(
-                            child: tagBuild("Flutter", Colors.orange, context))
+                            child: tagBuild("Studios", Colors.orange, context))
                       ],
                     ),
                     Row(
                       children: <Widget>[
                         Expanded(
-                            child: tagBuild("Design", Colors.green, context)),
-                        Expanded(child: tagBuild("Art", Colors.cyan, context)),
-                        Expanded(child: tagBuild("React", Colors.red, context))
+                            child: tagBuild("Artists", Colors.green, context)),
+                        Expanded(child: tagBuild("Performers", Colors.cyan, context)),
+                        Expanded(child: tagBuild("DJs", Colors.red, context))
                       ],
                     ),
                     Row(
                       children: <Widget>[
                         Expanded(
-                            child: tagBuild("Tech", Colors.purple, context)),
+                            child: tagBuild("Taxi Dancer", Colors.purple, context)),
                         Expanded(
                             child:
-                                tagBuild("Linux", Colors.deepOrange, context)),
+                                tagBuild("Event Photos", Colors.deepOrange, context)),
                         Expanded(
                             child: tagBuild(
-                                "More", Colors.deepPurpleAccent, context))
+                                "Videos", Colors.deepPurpleAccent, context))
                       ],
                     ),
                   ],

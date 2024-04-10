@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
+import 'package:nallagram/screens/Authenticate/login_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:nallagram/screens/Authenticate/welcome_screen.dart';
 class AppSettings extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -51,6 +53,10 @@ class AppSettings extends StatelessWidget {
           ListTile(
             leading: FaIcon(FontAwesomeIcons.signOutAlt),
             title: Text("Logout"),
+            onLongPress: () async {
+              await FirebaseAuth.instance.signOut();
+              Navigator.push(context, MaterialPageRoute(builder: (context) => Welcome(),));
+            },
           ),
         ],
       ),

@@ -48,6 +48,8 @@ void ImageHandler(File image) async {
   if (UploadTask.state == TaskState.success) {
     final String DownloadUrl = await UploadTask.ref.getDownloadURL();
 
+    debugPrint('Download URLLLLLLL:::: $DownloadUrl');
+
     publishPosts('India', DownloadUrl);
     addUserposts('India', DownloadUrl);
   }

@@ -215,25 +215,25 @@ class _ProfileState extends State<Profile> {
             child: Row(
               children: <Widget>[
                 Highlight(
-                    name: 'Github',
+                    name: 'Entrepreneur',
                     url:
-                        'https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png'),
+                        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxAdXZPbrMNnDXc6K80XJMllpgn1JXSzfHwo3Q19P1CJFK8X6upvvSr4HcVq5bDyyevec&usqp=CAU'),
                 Highlight(
-                    name: 'LinkedIn',
+                    name: 'Dancer',
                     url:
-                        'https://cdn2.iconfinder.com/data/icons/simple-social-media-shadow/512/14-512.png'),
+                        'https://as2.ftcdn.net/v2/jpg/04/48/03/51/1000_F_448035101_32M9iutC4cATVpFMumWgXp086q70VT8M.jpg'),
                 Highlight(
-                    name: 'Dribbble',
+                    name: 'DJ',
                     url:
-                        'https://cdn.freebiesupply.com/logos/large/2x/dribbble-icon-1-logo-png-transparent.png'),
+                        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyLYyv6YASAmQZspd6o0mF93PHWG9l8FGSVSr24KqzpOUuTMbNr_9sUSSPU80zlPqguQw&usqp=CAU'),
                 Highlight(
-                    name: 'Reddit',
+                    name: 'Artist',
                     url:
-                        'https://www.redditinc.com/assets/images/site/reddit-logo.png'),
+                        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQecvx6qEO96CTZj3rZnLA4t9g5JnWlZJAZHvqH4JO5RQ&s'),
                 Highlight(
-                    name: 'Quora',
+                    name: 'Studio',
                     url:
-                        'https://www.shareicon.net/data/128x128/2015/07/21/72869_quora_512x512.png'),
+                        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_mdlJUVk5IJ5gEZHoTCz3Lf7BJ113tiXGO_axg6QdgQ&s'),
               ],
             ),
           ),

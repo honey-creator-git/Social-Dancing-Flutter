@@ -9,6 +9,7 @@ import 'screens/Authenticate/welcome_screen.dart';
 import 'screens/Authenticate/register_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'root.dart';
 import 'screens/Chat/chat_home.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -26,8 +27,8 @@ Future<void> main() async {
       sslEnabled: false,
       persistenceEnabled: false,
     );
+    await FirebaseStorage.instance.useStorageEmulator('localhost', 9199);
   }
-  
   runApp(MyApp());
 }
 
@@ -68,7 +69,7 @@ class Authenticate extends StatelessWidget {
     final firebaseUser = context.watch<User>();
 
     if (firebaseUser != null) {
-      return Welcome();
+      return Nav();
     }
 
     return Welcome();
